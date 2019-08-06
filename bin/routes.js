@@ -43,8 +43,8 @@ app.get("/autopartes", (req, res)=>{
     controller.getAutopartesid( id_autoparte, res)
 });
 
-app.get("/autopartes/envios", (req, res) => {
-    controller.getEnviosraiz(res);
+app.get("/autopartes/envio", (req, res) => {
+    controller.getEnviosid(res);
 })
 
 exports.app = app;

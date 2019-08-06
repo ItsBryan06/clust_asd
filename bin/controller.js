@@ -42,7 +42,7 @@ class Controller{
            res.send(envios);
        })
 }
-getEnviosraiz(res){
+getEnviosid(res){
     Envio.find({}, (err, envios)=>{
         if(err) throw err;
 
