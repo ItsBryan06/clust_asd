@@ -3,19 +3,9 @@ const app= express();
 const { controller } = require("./controller");
 
 app.get("/", (req, res) =>{
-    res.send("Tienda de repuestos BBJK");
+    res.send("Tienda de repuestos ");
 } );
 
-/* app.get("/proveedores", (req, res)=>{
-   let usuarios = [
-        {nombre: "Bryan", password:"123"},
-        {nombre: "Ana", password:"132"},
-    ]
-    res.send(usuarios);
-    controller.getProveedores(res);
-
-
-}); */
 
 app.get("/proveedores", (req, res) => {
     controller.getProveedor(res);
@@ -43,22 +33,18 @@ app.get("/clientes/:id_cliente", (req, res)=>{
     controller.getEnvios( id_cliente, res)
 });
 app.get("/autopartes", (req, res)=>{
- /*   let usuarios = [
-        {nombre: "Bryan", password:"123"},
-        {nombre: "Ana", password:"132"},
-    ]
-    res.send(usuarios);*/
+
     controller.getAutopartes(res);
 
 
 });
  app.get("/autopartes/:id_autoparte", (req, res) => {
-    /*res.send("Se ha enviado a Bryan 4 llantas");*/
-    let id_autoparte= req.params.id_autoparte
+      let id_autoparte= req.params.id_autoparte
     controller.getAutopartesid( id_autoparte, res)
 });
 
- /*app.get("/autopartes/proveedores", (req, res) => {
-    res.send("proveedores de las autopartes");
-});*/
+app.get("/autopartes/envios", (req, res) => {
+    controller.getEnviosraiz(res);
+})
+
 exports.app = app;

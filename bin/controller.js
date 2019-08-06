@@ -42,6 +42,15 @@ class Controller{
            res.send(envios);
        })
 }
+getEnviosraiz(res){
+    Envio.find({}, (err, envios)=>{
+        if(err) throw err;
+
+        res.send(envios);
+    })
+}
+
+
 getAutopartesid( id_autoparte, res){
        Autoparte.find({_id:id_autoparte}, (err, autopartes)=>{
            if(err) throw err;
